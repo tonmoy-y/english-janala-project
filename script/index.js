@@ -33,6 +33,12 @@ buttonContainer.appendChild(button);
 
 loadButtons();
 
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 const removeActiveBtn = () => {
 const removeActive = document.getElementsByClassName("btn-active");
     for (const btn of removeActive) {
@@ -96,7 +102,7 @@ const loadDataWords = async (level_no) => {
         <div class="flex justify-between">
         
         <button onclick="LoadWordDetails(${word.id})" class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-circle-info"></i></button>
-        <button class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg"><i class="fa-solid fa-volume-high"></i></button>
+        <button onclick="pronounceWord('${word.word}')" class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg"><i class="fa-solid fa-volume-high"></i></button>
         </div>
         
         `
@@ -192,7 +198,7 @@ document.getElementById('btn-search').addEventListener('click', function() {
                         <button onclick="LoadWordDetails(${word.id})" class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg hover:bg-gray-200">
                             <i class="fa-solid fa-circle-info"></i>
                         </button>
-                        <button class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg">
+                        <button onclick="pronounceWord('${word.word}')" class="btn h-12 w-12 flex justify-center items-center text-xl bg-gray-100 rounded-lg">
                             <i class="fa-solid fa-volume-high"></i>
                         </button>
                     </div>
