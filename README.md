@@ -54,7 +54,7 @@ https://openapi.programming-hero.com/api/level/1
 3. Word details
 
 ```bash
-https://openapi.programming-hero.com/api/word/3}
+https://openapi.programming-hero.com/api/word/3
 ```
 
 4. All words (for search)
